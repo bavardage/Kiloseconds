@@ -4,6 +4,4 @@ Commiting Rules:
 
 Every new programming language added needs to be put in a seperate folder like for example  haskell/kilseconds.hs
 
-Every kiloseconds implementation must be named ks.*
-
 Also every commit must be signed off  -s
