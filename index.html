@@ -10,14 +10,25 @@
     <style type="text/css">
       #popup {
         display: none;
-        background: #000;
+        background: #444;
         color: #aaaaaa;
+        width: 80%;
+        height: 80%;
+        border: 5px solid black;
+        padding: 10px;
+      }
+      #popup h1 {
+        height: 10%;
+        margin: 0;
       }
       #popupText {
-        overflow: scroll;
+        overflow: auto;
+        height: 80%;
+        background: #aaa;
+        color: #444;
       }
-      #popupText div {
-        overflow: scroll;
+      #popup a {
+        color: yellow;
       }
     </style>
   </head>
@@ -32,6 +43,8 @@
     </ul>
 
     <div id="popup" style="display:none">
+      <span style="float:right"><a href="#" onclick="close_popup()">close</a></span>
+      <h1></h1>
       <div id="popupText">
       </div>
     </div>

@@ -90,38 +90,34 @@ function expand_language(id) {
 
 function show_implementation(tree_sha, path) {
     function show_blob(blob) {
-	debug('<div>' + blob.data + '</div>');
-	text = '<h1>' + blob.name + '</h1>';
-	text += '<pre>' + blob.data + '</pre>';
-	show_popup(text);
+	text = '<pre>' + blob.data + '</pre>';
+	show_popup(blob.name, text);
     }
     
     get_blob(tree_sha, path, show_blob);
 }
 
-function show_popup(text) {
+function show_popup(title, text) {
 
     $('#popup').fadeOut('fast');
-
+    $('#popup h1').html(title);
     $('#popupText').html(text);
 
     var windowWidth = window.innerWidth; //document.documentElement.clientWidth;  
     var windowHeight = window.innerHeight; //document.documentElement.clientHeight;  
-    var popupHeight = windowHeight * 0.8;
-    var popupWidth = windowWidth * 0.8;
+    var popupHeight = $('#popup').height();
+    var popupWidth = $('#popup').width();
 
     debug('height' + popupHeight);
     
-
-
     $("#popup").css({
 	    'position': 'absolute',
-	    'top': windowHeight/2-popupHeight/2,  
+		'top': windowHeight/2-popupHeight/2 + $(window).scrollTop(),  
 	    'left': windowWidth/2-popupWidth/2,
 		});
-    $('#popupText div').css({
-	    'width': popupWidth,
-	    'max-height': popupHeight,
-		});
     $('#popup').fadeIn('fast');
+}
+
+function close_popup() {
+    $('#popup').fadeOut('fast');
 }
