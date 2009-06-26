@@ -9,6 +9,9 @@
         show_implementations();
         show_recent_commits();
         update_clock();
+        $('#more-info').truncate(10, {
+          trail: [ " ( <a href='#' class='truncate_show'>more</a> . . . )", " ( . . . <a href='#' class='truncate_hide'>less</a> )" ]
+        });
       });
     </script>
   </head>
@@ -27,6 +30,32 @@
       ego-boosting and mind-blowing (albeit perhaps a bit over-engineered) 
       project which aims to provide its audience with the time in 
       kiloseconds, since we cannot live without it.
+
+      <h3>So, what do we mean by kiloseconds?</h3>
+      <div id="more-info">
+
+	Kilawhat? Are you crazy?
+
+	<h4>Why?</h4>
+	<p>
+	  It's a way of getting some of the benefits of measuring time in a metric way, without breaking physics. Most other 'metric' time systems redefine what a second is, and this has huge complications - fancy redefining what a Newton, a Watt and a Tesla are?
+	</p>
+	<p>
+	Why keep to minutes and hours, when these are perfectly arbitrary measurements of time - it's not even as if they divide the day into nice numbers.
+	</p>
+	<h4>How?</h4>
+	<p>
+	  The time in kiloseconds is simply the time since the beginning of the day, expressed in kiloseconds. One kilosecond is (evidently from the S.I. prefix) 1000 seconds, and so the time ranges from 0 ks (midnight) to 86.399 ks (1 second before midnight).
+	</p>
+	<p>
+	  Also of note is that 1 hour is approximately equal to 4 ks (4 ks = 66 minutes) so activities can be split into 1 ks (16 minutes) periods quite easily
+	</p>
+	
+	<h4>Who?</h4>
+	<p>
+	  This is brought to you by all those wonderful people who can be found in #archlinux-offtopic on the freenode irc network.
+	</p>
+      </div>
     </div>
 
     <div id="implementations-wrapper" class="curved-box">
