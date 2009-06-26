@@ -1,0 +1,63 @@
+#popup {
+    display: none;
+    background: #444;
+    color: #aaaaaa;
+    width: 80%;
+    height: 80%;
+    border: 5px solid black;
+    padding: 10px;
+}
+
+#popup h1 {
+    height: 10%;
+    margin: 0;
+}
+#popupText {
+    overflow: auto;
+    height: 80%;
+    background: #aaa;
+    color: #444;
+}
+#popup a {
+    color: yellow;
+}
+.loading {
+    background: url('images/mozilla_spinner.gif') no-repeat center center;
+}
+ul li span { 
+    cursor: pointer; 
+}
+
+/*Positioning and borders */
+
+.curved-box {
+    border: 2px solid black;
+    -moz-border-radius: 15px;
+}
+
+#header {
+    float: left;
+    width: 88%;
+    margin: 1% 5% 1% 5%; /*top right bottom left*/
+    padding: 0% 1% 0% 1%;
+}
+
+#about {
+    float: left;
+    margin: 1% 10% 1% 10%;
+    padding: 1%;
+    width: 78%;
+}
+
+#implementations-wrapper {
+    float:left;
+    margin: 1% 1% 1% 15%;
+    padding: 0% 1% 0% 1%;
+    width: 33%;
+}
+#recent-commits-wrapper {
+    float: left;
+    margin: 1%;
+    padding: 0% 1% 0% 1%;
+    width: 33%;
+}

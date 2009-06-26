@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript" src="script/jquery-1.3.2.js"></script>
     <script type="text/javascript" src="script/implementations.js"></script>
     <script>
@@ -7,46 +8,37 @@
         show_implementations();
       });
     </script>
-    <style type="text/css">
-      #popup {
-        display: none;
-        background: #444;
-        color: #aaaaaa;
-        width: 80%;
-        height: 80%;
-        border: 5px solid black;
-        padding: 10px;
-      }
-      #popup h1 {
-        height: 10%;
-        margin: 0;
-      }
-      #popupText {
-        overflow: auto;
-        height: 80%;
-        background: #aaa;
-        color: #444;
-      }
-      #popup a {
-        color: yellow;
-      }
-      .loading {
-        background: url('images/mozilla_spinner.gif') no-repeat center center;
-      }
-      ul li span { 
-        cursor: pointer; 
-      }
-    </style>
   </head>
   <body>
-    <h1>Kiloseconds</h1>
-
-    <div id="debug" class="loading">
+    <div id="header" class="curved-box">
+      <h1>Kiloseconds</h1>
     </div>
 
-    <ul id="implementations">
-      
-    </ul>
+    <div id="About" class="curved-box">
+      <h2>About</h2>
+      The kiloseconds project is a very sophisticated and exquisite, 
+      ego-boosting and mind-blowing (albeit perhaps a bit over-engineered) 
+      project which aims to provide its audience with the time in 
+      kiloseconds, since we cannot live without it.
+    </div>
+
+    <div id="implementations-wrapper" class="curved-box">
+      <h2>Implementations</h2>
+      <ul id="implementations">
+	
+      </ul>
+    </div>
+
+    <div id="recent-commits-wrapper" class="curved-box">
+      <h2>Recent Commits</h2>
+      <div id="recent-commits">
+	1231234234
+
+	OMG by someone
+
+<br/><br/> thingy by someone else
+      </div>
+    </div>
 
     <div id="popup" style="display:none">
       <span style="float:right"><a href="#" onclick="close_popup()">close</a></span>
