@@ -4,7 +4,7 @@
     <script type="text/javascript" src="script/implementations.js"></script>
     <script>
       $(document).ready(function() {
-        test();
+        show_implementations();
       });
     </script>
     <style type="text/css">
@@ -30,16 +30,19 @@
       #popup a {
         color: yellow;
       }
+      .loading {
+        background: url('images/mozilla_spinner.gif') no-repeat center center;
+      }
     </style>
   </head>
   <body>
     <h1>Kiloseconds</h1>
 
-    <div id="debug">
+    <div id="debug" class="loading">
     </div>
 
     <ul id="implementations">
-
+      
     </ul>
 
     <div id="popup" style="display:none">

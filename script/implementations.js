@@ -46,12 +46,13 @@ function debug(text) {
     //    $('#debug').append(text + '<br/>');
 }
 
-function test() {
-    show_implementations();
-}
-
 function show_implementations() {
+    $('#implementations').addClass('loading');
+    $('#implementations').html('<li>loading...</li>');
+
     function process_master_tree(treeitems) {
+	$('#implementations').removeClass('loading');
+	$('#implementations').html('');
 	$.each(treeitems, function(i, item) {
 		if(item.type=='tree') {
 		    $('#implementations').append(
@@ -70,8 +71,15 @@ function show_implementations() {
 
 function expand_language(id) {
     $('#' + id).append('<ul></ul>');
+    $('#' + id + ' span').removeAttr('onclick');
+    $('#' + id + ' ul').addClass('loading');
+    $('#' + id + ' ul').html('<li>loading...</li>');
+
+
 
     function process_language_tree(treeitems) {
+	$('#' + id + ' ul').removeClass('loading');
+	$('#' + id + ' ul').html('');
 	$.each(treeitems, function(i, item) {
 		if(item.type = 'blob') {
 		    $('#' + id + ' ul').append(
@@ -84,7 +92,7 @@ function expand_language(id) {
 		}
 	    });
     }
-    
+
     get_tree(id, process_language_tree);
 }
 
