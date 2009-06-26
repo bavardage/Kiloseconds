@@ -56,8 +56,16 @@ function show_implementations() {
 	$.each(treeitems, function(i, item) {
 		if(item.type=='tree') {
 		    $('#implementations').append(
-		     '<li id="' + item.sha + '"><span onClick="expand_language(\'' + item.sha + '\')";>' + item.name + '</span></li>'
-		    );
+						 '<li id="' 
+						 + item.sha 
+						 + '"><span>' 
+						 + item.name 
+						 + '</span></li>'
+						 );
+
+		     $('#' + item.sha + ' span').click(function() {
+			     expand_language(item.sha);
+			 });
 		}
 	    });
     }
@@ -69,13 +77,22 @@ function show_implementations() {
     get_master_sha_id(process_master_sha_id);
 }
 
+function hide_language(id) {
+    $('#' + id + ' ul').remove();
+    $('#' + id + ' span').unbind('click');
+    $('#' + id + ' span').click(function() {
+	    expand_language(id);
+	});
+}
+
 function expand_language(id) {
     $('#' + id).append('<ul></ul>');
-    $('#' + id + ' span').removeAttr('onclick');
+    $('#' + id + ' span').unbind('click')
+    $('#' + id + ' span').click(function () {
+	    hide_language(id);
+	})
     $('#' + id + ' ul').addClass('loading');
     $('#' + id + ' ul').html('<li>loading...</li>');
-
-
 
     function process_language_tree(treeitems) {
 	$('#' + id + ' ul').removeClass('loading');
