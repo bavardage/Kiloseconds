@@ -114,8 +114,21 @@ function expand_language(id) {
 }
 
 function show_implementation(tree_sha, path) {
+
+    function parse_code(code){
+	code=code.replace(/&/mg,'&#38;');
+	code=code.replace(/</mg,'&#60;');
+	code=code.replace(/>/mg,'&#62;');
+	code=code.replace(/\"/mg,'&#34;');
+	code=code.replace(/\t/g,'  ');
+	code=code.replace(/\r?\n/g,'<br>');
+	code=code.replace(/<br><br>/g,'<br>');
+	code=code.replace(/ /g,'&nbsp;');
+	return code;
+    }
+
     function show_blob(blob) {
-	text = '<pre>' + blob.data + '</pre>';
+	text = '<pre><code>' + parse_code(blob.data) + '</code></pre>';
 	show_popup(blob.name, text);
     }
     
