@@ -152,7 +152,7 @@ def init_screen():
     curses.cbreak()
     screen.clear()
    
-def main(screen, fg, bg):
+def main(screen, fg, bg, flicker):
     curses.curs_set(0) #hide cursor
     screen.nodelay(1) # don't wait for input
 
@@ -178,6 +178,8 @@ def main(screen, fg, bg):
 
     t = None
     while True:
+        if flicker: screen.clear()
+
         newtime = tick(screen)
         if t != newtime:
             screen.refresh()
@@ -193,9 +195,10 @@ def main(screen, fg, bg):
 def usage():
     print '''curses_clock.py [OPTION]
 
-  -h, --help displays this help
-  -f, --fg=COLORCODE sets the foreground color to COLORCODE
-  -b, --bg=COLORCODE sets the background color to COLORCODE
+  -h, --help           displays this help
+  -f, --fg=COLORCODE   sets the foreground color to COLORCODE
+  -b, --bg=COLORCODE   sets the background color to COLORCODE
+    , --flicker        makes the clock flicker every half a second
 
 
 Color codes available:
@@ -215,6 +218,7 @@ Color codes available:
 if __name__ == '__main__':
     bg = 0
     fg = 7
+    flicker = False
 
     def do_color(arg):
         try:
@@ -230,7 +234,7 @@ if __name__ == '__main__':
             
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hf:b:", ["help", "fg=", "bg="])
+        opts, args = getopt.getopt(sys.argv[1:], "hf:b:", ["help", "fg=", "bg=", "flicker"])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
@@ -243,9 +247,11 @@ if __name__ == '__main__':
             fg = do_color(arg)
         elif opt in ("-b", "--bg"):
             bg = do_color(arg)
+        elif opt in ("--flicker"):
+            flicker = True
 
 
-    curses.wrapper(main, fg, bg)
+    curses.wrapper(main, fg, bg, flicker)
 
     
 
