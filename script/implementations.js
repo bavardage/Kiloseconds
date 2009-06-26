@@ -146,3 +146,47 @@ function show_popup(title, text) {
 function close_popup() {
     $('#popup').fadeOut('fast');
 }
+
+function get_recent_commits(callback) {
+    function get_from_branch(branch) {
+	url = api_url + 'commits/list/' 
+	    + username + '/' + reponame + '/' 
+	    + branch + '?callback=?';
+	$.getJSON(url, 
+		  function(data) {
+		      callback(data.commits);
+		  }
+		  );
+    }
+    
+    get_master_sha_id(get_from_branch);
+}
+	
+	    
+function show_recent_commits() {
+
+    $('#recent-commits').html('<div class="commit">loading...</div>');
+    $('#recent-commits').addClass('loading');
+	
+
+    function show_commits(commits) {
+	$('#recent-commits').html('');
+	$('#recent-commits').removeClass('loading');
+	$.each(commits.slice(0,3), function(i, item) {
+		text = '<div class="commit">';
+		text += '<span class="commit-message">';
+		text += item.message;
+		text += '</span>';
+		text += ' by ';
+		text += item.author.name;
+		text += '</div>';
+
+		$('#recent-commits').append(text)
+		    });
+	$(".commit-message").truncate( 30, {
+		trail: [ " ( <a href='#' class='truncate_show'>more</a> . . . )", " ( . . . <a href='#' class='truncate_hide'>less</a> )" ]
+		    });
+
+    }
+    get_recent_commits(show_commits)
+}

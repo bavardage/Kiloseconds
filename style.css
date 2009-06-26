@@ -28,6 +28,17 @@ ul li span {
     cursor: pointer; 
 }
 
+#recent-commits .commit {
+    padding: 1%;
+    margin: 1%;
+    border-top: 1px solid #aaa;
+}
+
+#recent-commits .commit + #recent-commits .commit {
+    border-top-width: 0px;
+    border-bottom: 1px solid #aaa;
+}
+
 /*Positioning and borders */
 
 .curved-box {
@@ -61,3 +72,4 @@ ul li span {
     padding: 0% 1% 0% 1%;
     width: 33%;
 }
+
