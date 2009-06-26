@@ -29,7 +29,7 @@ sub kser
     my $h;
 
     ($s,$m,$h) = localtime();
-    $kstime = sprintf("%.3f",(($h*3600+$m*60+$s)/1000));
+    $kstime = sprintf("%.3f",(($h*3600+$m*60+$s)/1000)).' ';
     Irssi::command("^set timestamp_format $kstime");
 }
 
