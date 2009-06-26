@@ -39,8 +39,6 @@ ul li span {
     border-bottom: 1px solid #aaa;
 }
 
-/*Positioning and borders */
-
 .curved-box {
     border: 2px solid black;
     -moz-border-radius: 15px;
@@ -48,9 +46,19 @@ ul li span {
 
 #header {
     float: left;
-    width: 88%;
-    margin: 1% 5% 1% 5%; /*top right bottom left*/
+    width: 46%;
+    margin: 1% 1% 1% 5%; /*top right bottom left*/
     padding: 0% 1% 0% 1%;
+    height: 100px;
+}
+
+#the-time {
+    float: left;
+    width: 38%;
+    padding: 0% 1% 0% 1%;
+    margin: 1% 1% 1% 1%;
+    height: 100px;
+    font-size: 90px;
 }
 
 #about {

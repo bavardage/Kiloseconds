@@ -8,13 +8,18 @@
       $(document).ready(function() {
         show_implementations();
         show_recent_commits();
+        update_clock();
       });
     </script>
   </head>
   <body>
-    <div id="header" class="curved-box">
-      <h1>Kiloseconds</h1>
-    </div>
+      <div id="header" class="curved-box">
+	<h1>Kiloseconds</h1>
+      </div>
+
+      <div id="the-time" class="curved-box">
+	00.000
+      </div>
 
     <div id="About" class="curved-box">
       <h2>About</h2>

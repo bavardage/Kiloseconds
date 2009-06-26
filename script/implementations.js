@@ -190,3 +190,11 @@ function show_recent_commits() {
     }
     get_recent_commits(show_commits)
 }
+
+function update_clock() {
+    ourDate = new Date();
+    metricTime =  (ourDate.getHours() * 3600 + ourDate.getMinutes() * 60 + ourDate.getSeconds());
+    $('#the-time').html((metricTime/1000).toFixed(3) + 'ks');
+
+    setTimeout(update_clock, 500);
+}
