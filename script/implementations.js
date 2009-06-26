@@ -4,8 +4,6 @@ var api_url = 'http://github.com/api/v2/json/';
 
 
 function get_blob(sha_id, path, callback) {
-    // calls callback with the blob object
-
     url = api_url + 'blob/show/' + username + '/' + reponame + '/' + sha_id + '/' + path + '?callback=?';
 
     $.getJSON(url, 
@@ -31,8 +29,6 @@ function get_master_sha_id(callback) {
 }
 
 function get_tree(sha_id, callback) {
-    //calls callback with the tree object
-    
     url = api_url + 'tree/show/' + username + '/' + reponame + '/' + sha_id + '?callback=?';
 
     $.getJSON(url,

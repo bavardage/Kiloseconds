@@ -67,7 +67,7 @@ li:hover > span {
     float: left;
     margin: 1% 1% 1% 1%;
     padding: 0% 1% 0% 1%;
-    width: 32%;
+    min-width: 32%;
 
     height: 100px;
 
