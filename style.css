@@ -33,7 +33,7 @@ ul li span {
     cursor: pointer; 
 }
 
-ul li:hover {
+li:hover > span {
     color: #444;
 }
 
@@ -51,10 +51,6 @@ ul li:hover {
 .curved-box {
     border: 2px solid black;
     -moz-border-radius: 15px;
-}
-
-div.curved-box:hover {
-    border-color: #444;
 }
 
 #header {
