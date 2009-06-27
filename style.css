@@ -58,20 +58,19 @@ li:hover > span {
 
     margin: 1% 1% 1% 5%;
     padding: 0% 1% 0% 1%; /*top right bottom left*/
-    width: 52%;
+    width: 88%;
 
     height: 100px;
 }
 
-#the-time {
+#header h1 {
     float: left;
-    margin: 1% 1% 1% 1%;
-    padding: 0% 1% 0% 1%;
-    min-width: 32%;
+}
 
-    height: 100px;
-
-    font-size: 90px;
+#the-time {
+    height: 100%;
+    font-size: 80px;
+    float: right;
 }
 
 #about {
