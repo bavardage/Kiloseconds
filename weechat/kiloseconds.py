@@ -47,7 +47,7 @@ def getKiloseconds():
 
 def kiloseconds_cmd(data, buffer, args):
     """Callback for /ks command"""
-    weechat.command(buffer,"The current time is " + str(getKiloseconds()) + " KS")
+    weechat.command(buffer,"The current time is " + str(getKiloseconds()) + " ks")
     return weechat.WEECHAT_RC_OK
 
 def kiloseconds_cb(data, buffer, args):
