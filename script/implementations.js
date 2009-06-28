@@ -124,30 +124,31 @@ function show_implementation(tree_sha, path) {
     }
 
     function show_blob(blob) {
+
+	raw_download_link = api_url + 'blob/show/' + username + '/' + reponame + '/' + blob.sha;
+	bar = '<span><a href="' + raw_download_link + '">download</a> (save link as)</span>\n';
 	text = '<pre><code>' + parse_code(blob.data) + '</code></pre>';
-	show_popup(blob.name, text);
+	show_popup(blob.name, bar, text);
     }
     
     get_blob(tree_sha, path, show_blob);
 }
 
-function show_popup(title, text) {
+function show_popup(title, bar, text) {
 
     $('#popup').fadeOut('fast');
     $('#popup h1').html(title);
+    $('#popupBar').html(bar);
     $('#popupText').html(text);
 
-    var windowWidth = window.innerWidth; //document.documentElement.clientWidth;  
     var windowHeight = window.innerHeight; //document.documentElement.clientHeight;  
     var popupHeight = $('#popup').height();
-    var popupWidth = $('#popup').width();
 
     debug('height' + popupHeight);
     
     $("#popup").css({
 	    'position': 'absolute',
-		'top': windowHeight/2-popupHeight/2 + $(window).scrollTop(),  
-	    'left': windowWidth/2-popupWidth/2,
+		'top': windowHeight*0.1 + $(window).scrollTop(),  
 		});
     $('#popup').fadeIn('fast');
 }

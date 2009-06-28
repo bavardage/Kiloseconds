@@ -2,29 +2,41 @@ html {
     font-family: "Nimbus Sans L", "Helvetica";
 }
 
+
 #popup {
     display: none;
-    background: #444;
-    color: #aaaaaa;
-    width: 80%;
-    height: 80%;
-    border: 5px solid black;
-    padding: 10px;
+    width: 78%;
+    background-color: white;
+    padding: 1%;
+    left: 10%;
 }
 
-#popup h1 {
-    height: 10%;
-    margin: 0;
+
+#popupBar {
+    margin: 1%;
+    margin-bottom: 0;
+    padding: 2px;
+    border: 1px solid #aaa;
+    border-bottom-width: 0;
+    background-color: #eee;
 }
+
+#popupBar a {
+    text-decoration: none;
+}
+
+#popupBar a:hover {
+    text-decoration: underline;
+}
+
 #popupText {
-    overflow: auto;
-    height: 80%;
-    background: #aaa;
+    border: 1px solid #aaa;
     color: #444;
-}
-#popup a {
-    color: yellow;
-}
+    margin: 1%;
+    margin-top: 0;
+    padding: 10px;
+ }
+
 .loading {
     background: url('images/mozilla_spinner.gif') no-repeat center center;
 }

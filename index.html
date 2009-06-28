@@ -2,7 +2,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript" src="script/jquery-1.3.2.js"></script>
-    <script language="javascript" type="text/javascript" src="script/jquery.truncate-2.3.js"></script>
+    <script type="text/javascript" src="script/jquery.truncate-2.3.js"></script>
     <script type="text/javascript" src="script/implementations.js"></script>
     <script>
       $(document).ready(function() {
@@ -89,12 +89,13 @@
       </div>
     </div>
 
-    <div id="popup" style="display:none">
+    <div id="popup" style="display:none" class="curved-box">
       <span style="float:right"><a href="#" onclick="close_popup()">close</a></span>
       <h1></h1>
+      <div id="popupBar">
+      </div>
       <div id="popupText">
       </div>
     </div>
-    
   </body>
 </html>
