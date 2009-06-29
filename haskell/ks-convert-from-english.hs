@@ -137,13 +137,16 @@ parseTimeString input = case (parse parseTime "" input) of
 test = parseTest parseTime
 
 
-main = do
+loop = do
   putStrLn "Enter time:"
   str <- getLine
   let time = parseTimeString (map toLower str)
   ks <- timeToKiloseconds time
   putStrLn $ "Time is " ++ (formatKS 3 ks) ++ " ks"
+  loop
       where
         formatKS n ks = let (b,a) = properFraction ks
                             c     = round $ a * 10^n
                         in show(b) ++ "." ++ show(c)
+  
+main = loop
