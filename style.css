@@ -12,13 +12,21 @@ html {
 }
 
 
-#popupBar {
+.bar {
     margin: 1%;
     margin-bottom: 0;
     padding: 2px;
     border: 1px solid #aaa;
     border-bottom-width: 0;
     background-color: #eee;
+}
+
+.textbox {
+    border: 1px solid #aaa;
+    color: #444;
+    margin: 1%;
+    margin-top: 0;
+    padding: 1%;
 }
 
 #popupBar a {
@@ -29,13 +37,6 @@ html {
     text-decoration: underline;
 }
 
-#popupText {
-    border: 1px solid #aaa;
-    color: #444;
-    margin: 1%;
-    margin-top: 0;
-    padding: 10px;
- }
 
 .loading {
     background: url('images/mozilla_spinner.gif') no-repeat center center;
@@ -105,3 +106,17 @@ li:hover > span {
     width: 32%;
 }
 
+#footer {
+    float: left;
+    margin: 1% 1% 1% 5%;
+    padding: 1%;
+    width: 88%;
+}
+
+#footer img {
+    vertical-align: middle;
+}
+
+#footer a {
+    color: black;
+}

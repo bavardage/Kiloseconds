@@ -1,17 +1,19 @@
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Kiloseconds</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="script/jquery-1.3.2.js"></script>
     <script type="text/javascript" src="script/jquery.truncate-2.3.js"></script>
     <script type="text/javascript" src="script/implementations.js"></script>
-    <script>
+    <script type="text/javascript">
       $(document).ready(function() {
         show_implementations();
         show_recent_commits();
         update_clock();
-        $('#more-info').truncate(10, {
-          trail: [ " ( <a href='#' class='truncate_show'>more</a> . . . )", " ( . . . <a href='#' class='truncate_hide'>less</a> )" ]
-        });
+        truncate_more_info();
       });
     </script>
   </head>
@@ -24,7 +26,7 @@
       </div>
       
 
-    <div id="About" class="curved-box">
+    <div id="about" class="curved-box">
       <h2>About</h2>
       The kiloseconds project is a very sophisticated and exquisite, 
       ego-boosting and mind-blowing (albeit perhaps a bit over-engineered) 
@@ -37,19 +39,27 @@
 	Kilowhat? Are you crazy?
 
 	<h4>What?</h4>
-	<p>
-	  The time expressed in kiloseconds is written in the following form.
-	  <blockquote>
-	    12.345 ks
-	  </blockquote>
-	  <ul>
-	    <li>The first two digits measure whole numbers of kiloseconds (although if the leading digit is zero, it can be ommitted)</li>
-	    <li>The digits following the point express fractions of kiloseconds</li>
-	    <li>There is an optional space before...</li>
-	    <li><strong>ks</strong> - the symbol for kiloseconds. Note that this should be <strong>always</strong> in lower case.</li>
-	  </ul>
-	</p>
-
+	<div class="bar">
+	  Examples of time written in kiloseconds
+	</div>
+	<blockquote class="textbox">
+	  <p>12.345 ks, 12.345ks, 12.345 kiloseconds, 00.000 ks, 1.105 ks, 1.11 ks, 1.1 ks</p>
+	</blockquote>
+	<ul>
+	  <li>
+	    The first two digits measure whole numbers of kiloseconds (although if the leading digit is zero, it can be ommitted)
+	  </li>
+	  <li>
+	    The digits following the point express fractions of kiloseconds, general to three decimal places.
+	  </li>
+	  <li>
+	    There is an optional space before...
+	  </li>
+	  <li>
+	    <strong>ks</strong> - the symbol for kiloseconds. Note that this should be <strong>always</strong> in lower case.
+	  </li>
+	</ul>
+	
 	<h4>Why?</h4>
 	<p>
 	  It's a way of getting some of the benefits of measuring time in a metric way, without breaking physics. Most other 'metric' time systems redefine what a second is, and this has huge complications - fancy redefining what a Newton, a Watt and a Tesla are?
@@ -79,7 +89,7 @@
     <div id="implementations-wrapper" class="curved-box">
       <h2>Implementations</h2>
       <ul id="implementations">
-	
+	<li>loading...</li>
       </ul>
     </div>
 
@@ -92,10 +102,24 @@
     <div id="popup" style="display:none" class="curved-box">
       <span style="float:right"><a href="#" onclick="close_popup()">close</a></span>
       <h1></h1>
-      <div id="popupBar">
+      <div id="popupBar" class="bar">
       </div>
-      <div id="popupText">
+      <div id="popupText" class="textbox">
       </div>
+    </div>
+
+    <div id="footer" class="curved-box">
+	<a href="http://validator.w3.org/check?uri=referer">
+	  <img src="http://www.w3.org/Icons/valid-xhtml10-blue" 
+	       alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+	</a>
+	<a href="http://www.archlinux.org">
+	  <img src="images/arch83x31.gif"
+	       alt="Archlinux" />
+	</a>
+	<span>
+	  An Archlinux-Offtopic Production™
+	</span>
     </div>
   </body>
 </html>

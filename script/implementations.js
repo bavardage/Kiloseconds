@@ -208,3 +208,9 @@ function update_clock() {
 
     setTimeout(update_clock, 500);
 }
+
+function truncate_more_info() {
+    $('#more-info').truncate(10, {
+	    trail: [ " ( <a href='#' class='truncate_show'>more</a> . . . )", " ( . . . <a href='#' class='truncate_hide'>less</a> )" ]
+		});
+}
