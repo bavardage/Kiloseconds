@@ -131,7 +131,7 @@ parseTime = try parseNumeric <|> try parsePastToPhrase <|> parseSpecial
 
 parseTimeString :: String -> Time
 parseTimeString input = case (parse parseTime "" input) of
-                Left err -> Error "oh noes"
+                Left err -> Error "oh noes - that time isn't valid"
                 Right t -> t
 
 test = parseTest parseTime
@@ -141,8 +141,11 @@ loop = do
   putStrLn "Enter time:"
   str <- getLine
   let time = parseTimeString (map toLower str)
-  ks <- timeToKiloseconds time
-  putStrLn $ "Time is " ++ (formatKS 3 ks) ++ " ks"
+  case time of
+    Error e -> putStrLn e
+    _ -> do
+         ks <- timeToKiloseconds time
+         putStrLn $ "Time is " ++ (formatKS 3 ks) ++ " ks"
   loop
       where
         formatKS n ks = let (b,a) = properFraction ks
