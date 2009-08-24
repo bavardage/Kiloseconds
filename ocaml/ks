@@ -1,0 +1,5 @@
+!/usr/bin/ocaml unix.cma
+open Unix;;
+let ks () = let t = localtime (time ()) in 
+  float_of_int (t.tm_sec + t.tm_min * 60 + t.tm_hour * 3600) /. 1000.0;;
+print_float (ks ());;
