@@ -7,4 +7,6 @@ hour = c(4);
 min = c(5);
 % get seconds
 sec = c(6);
-ks = (hour * (min*60) * sec)/ 1000;
+ks = (hour*3600+min*60+sec)/1000;
+end
+
