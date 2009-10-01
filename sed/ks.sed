@@ -3,7 +3,6 @@
     s/.*/Supply time on stdin in a format corresponding to what date "+%H %M %S" would output/
     b
 :ok;x
-
 :s; s/^\(.. ..\) \(..\)/\1 000\2/;tm
 :m; s/^.. .0/& 00000/;tm1
     s/^.. .1/& 00060/;tm1;  s/^.. .2/& 00120/;tm1;  s/^.. .3/& 00180/;tm1
