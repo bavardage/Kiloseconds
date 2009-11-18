@@ -7,7 +7,7 @@ program Kiloseconds
                                     ! VALUE(6) - minutes,
                                     ! VALUE(7) - seconds,
                                     ! VALUE(8) - milliseconds.
-    ks = date(5)*3.6 + date(6)*0.06 + date(7)*0.001 + date(8)*10**(-6)
 
-    write(*,'(F6.3, " kiloseconds")'), ks
+    write(*,'(F6.3, " kiloseconds")'), &
+    date(5)*3.6 + date(6)*0.06 + date(7)*0.001 + date(8)*10**(-6)
 end program Kiloseconds
