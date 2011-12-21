@@ -1,5 +1,5 @@
 program Kiloseconds
-    
+
     integer,dimension(8) :: date
     real :: ks
 

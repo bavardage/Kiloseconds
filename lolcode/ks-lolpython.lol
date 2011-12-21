@@ -10,4 +10,4 @@ KILOSECONDS GETZ ANOTHR PILE OF THOSE TODAYS OWN tm_sec
 
 VISIBLE "OMG IT'S" AND KILOSECONDS SMASHES INTO 1000.0 AND "KILOSECONDS"
 
-BTW http://www.dalkescientific.com/writings/diary/archive/2007/06/01/lolpython.html 
+BTW http://www.dalkescientific.com/writings/diary/archive/2007/06/01/lolpython.html

@@ -1,11 +1,11 @@
-The kiloseconds project is a very sophisticated and exquisite, ego-boosting and mind-blowing (albeit perhaps a bit over-engineered) project which aims to provide its audience with the time in kiloseconds, since we cannot live without it. 
+The kiloseconds project is a very sophisticated and exquisite, ego-boosting and mind-blowing (albeit perhaps a bit over-engineered) project which aims to provide its audience with the time in kiloseconds, since we cannot live without it.
 
 Commiting Rules:
 
 Every new programming language added needs to be put in a seperate folder like for example  haskell/kilseconds.hs
 
 Every kiloseconds implementation must be named ks[-foobar].* (use a -foobar to distinguish several implimentations
-example: perl-gtk2.pl) 
+example: perl-gtk2.pl)
 If the implimentation has more than 1 file, create a subdirectory for it.
 
 Also every commit must be signed off  -s

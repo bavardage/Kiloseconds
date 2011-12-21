@@ -10,5 +10,5 @@
         kiloseconds (/ (+ (* hours 3600) (* minutes 60) seconds) 1000)]
     (println (str "Kiloseconds: " (float kiloseconds)))))
 
-;; call it                                                                      
+;; call it
 (kiloseconds)

@@ -3,7 +3,7 @@ function ks = kiloseconds();
 c = clock;
 % get hour
 hour = c(4);
-% get minutes 
+% get minutes
 min = c(5);
 % get seconds
 sec = c(6);
