@@ -12,22 +12,22 @@ $VERSION = '0.10';
    license	=> 'GPL',
    url		=> 'http://wiki.archlinux.org/index.php/Kiloseconds',
    changed	=> 'no idea',
-); 
- 
+);
+
 
 sub cmd_kiloseconds {
     my ($data, $server, $witem) = @_;
     my $output;
     my $ks;
     my $s;
-    my $m; 
+    my $m;
     my $h;
 
     ($s,$m,$h) = localtime();
-    $ks = ($h*3600+$m*60+$s)/1000; 
+    $ks = ($h*3600+$m*60+$s)/1000;
 
     $output = sprintf("Current time: %.3f  kiloseconds", $ks);
- 
+
 
     if ($output) {
 	if ($witem && ($witem->{type} eq "CHANNEL" || $witem->{type} eq "QUERY")) {
